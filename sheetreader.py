@@ -21,6 +21,7 @@ class SheetReader:
                 entries[f] = data
 
         return entries
+
         
     def _read_file(self,f_path,cols):
         return pd.read_excel(f_path, usecols=cols)
