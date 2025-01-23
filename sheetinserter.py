@@ -67,10 +67,9 @@ class SheetInserter:
             pos = self.rc_to_a1(row,col)
             self._update_with_backoff(pos,[[value]])
             qr = QRcodeGen()
-            qr(str(self.id),str(self.id)+".png")
+            qr(str(self.id),"qr_codes/"+str(self.id)+".png")
             
-            if self.verbose: print("created qr for '{}' id!".format(self.id))
-            
+        if self.verbose: print("created qr for '{}' id!".format(self.id))
         self.id+=1
 
     def _update_with_backoff(self, pos, value):
