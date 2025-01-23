@@ -1,6 +1,9 @@
+
 import os
 import shutil
 from mail import Mail
+from sheetreader import SheetReader
+from sheetinserter import SheetInserter
 
 def prepare():
     try:
@@ -19,7 +22,13 @@ if __name__ == "__main__":
     prepare()
     
     mail = Mail("imap.mail.ru","maganer.krik@mail.ru","bYZt59p2YTaxT5YHTPF0","INBOX/ToMyself")
+    if mail():
+        reader = SheetReader()
+        data = reader()
 
+        inserter = SheetInserter("passverify-f76682252625.json","hansa project",True)
+        inserter(data)
+        
     clear()
     
 
