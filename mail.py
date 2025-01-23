@@ -1,7 +1,7 @@
 import imaplib
 import email
 from email.policy import default
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 
 
